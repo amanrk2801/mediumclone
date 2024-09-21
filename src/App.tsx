@@ -14,8 +14,6 @@ import Footer from '../src/components/Footer'
 import WritePage from './components/pages/WritePage';
 import SignInPage from './components/pages/SignInPage';
 import OurStoryPage from './components/pages/OurStoryPage';
-import SignUp from './components/auth/SignIn';
-import SignIn from './components/auth/SignIn';
 
 const articles = [
   {
@@ -78,8 +76,6 @@ function App() {
           <Route path="/membership-plans" element={<MembershipPage />} />
           <Route path="/write" element={<WritePage />} />
           <Route path="/sign-in" element={<SignInPage />} />
-          <Route path="/signin" element={<SignIn />} />
-          <Route path="/signup" element={<SignUp />}/>
         </Routes>
       </Router>
 
