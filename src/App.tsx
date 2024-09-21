@@ -1,8 +1,9 @@
 'use client'
 
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import MembershipPage from './components/pages/MembershipPage'
 import { useState, useEffect } from 'react'
-import 
-{ ai_image, fashion, climate, remote_work } from './assets/images'
+import { ai_image, fashion, climate, remote_work } from './assets/images'
 import Header from '../src/components/Header'
 import SearchBar from '../src/components/SearchBar'
 import FeaturedArticle from '../src/components/FeaturedArticle'
@@ -10,6 +11,11 @@ import LatestArticles from '../src/components/LatestArticles'
 import Sidebar from '../src/components/Sidebar'
 import NewsletterSection from '../src/components/NewsletterSection'
 import Footer from '../src/components/Footer'
+import WritePage from './components/pages/WritePage';
+import SignInPage from './components/pages/SignInPage';
+import OurStoryPage from './components/pages/OurStoryPage';
+import SignUp from './components/auth/SignIn';
+import SignIn from './components/auth/SignIn';
 
 const articles = [
   {
@@ -58,6 +64,7 @@ function App() {
 
   return (
     <div className={`min-h-screen flex flex-col ${darkMode ? 'dark' : ''}`}>
+      <Router>
       <Header
         darkMode={darkMode}
         setDarkMode={setDarkMode}
@@ -66,6 +73,15 @@ function App() {
         userMenuOpen={userMenuOpen}
         setUserMenuOpen={setUserMenuOpen}
       />
+        <Routes>
+          <Route path="/our-story" element={<OurStoryPage />} />
+          <Route path="/membership-plans" element={<MembershipPage />} />
+          <Route path="/write" element={<WritePage />} />
+          <Route path="/sign-in" element={<SignInPage />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />}/>
+        </Routes>
+      </Router>
 
       {searchOpen && <SearchBar />}
 
