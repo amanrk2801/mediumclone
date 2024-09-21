@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { SearchIcon, MoonIcon, SunIcon } from 'lucide-react';
 import UserMenu from './UserMenu';
-import AuthModals from './auth/AuthModals';
+import AuthModals from '../auth/AuthModals';
 
 interface HeaderProps {
   darkMode: boolean;
